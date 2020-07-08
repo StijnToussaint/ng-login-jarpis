@@ -1,5 +1,4 @@
-import { RouterModule, Router } from '@angular/router';
-import { AppRoutingModule } from './../app-routing.module';
+import { Router } from '@angular/router';
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
  
