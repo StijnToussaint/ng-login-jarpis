@@ -1,6 +1,7 @@
 <h1>Hello World! app-component</h1>
-<a routerLink="">Home</a>
-<br>
-<a routerLink="login">Login</a>
-
+<ul>
+  <li><a routerLink="">Home</a></li>
+  <li><a routerLink="login">Login</a></li>
+  <li><a (click)="authService.logout()">Logout</a></li>
+</ul>
 <router-outlet></router-outlet>

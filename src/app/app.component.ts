@@ -1,5 +1,5 @@
+import { AuthService } from './auth.service';
 import { Component } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +8,10 @@ import {HttpClient} from '@angular/common/http';
 })
 export class AppComponent {
   title = 'ng-login-jarpis';
+  authService;
 
-  constructor(private http: HttpClient) {
+  constructor(private authService_: AuthService) {
+    this.authService = authService_;
   }
 
-  ngOnInit(): void {
-    this.http.get('http://jsonplaceholder.typicode.com/users')
-    .subscribe(data => {
-      // TODO: Do stuff with data
-    });
-  }
 }
