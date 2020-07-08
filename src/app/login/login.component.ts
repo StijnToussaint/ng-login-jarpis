@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { AuthService } from './../auth.service';
+import { AuthService } from '../services/auth.service';
 import { Component, OnInit } from '@angular/core';
  
 @Component({
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(credentials).subscribe(
       result => {
         if(result){
-          this.route.navigate(['']);
+          this.route.navigate(['private-home']);
         }else{
           this.invalidLogin = true;
         }
