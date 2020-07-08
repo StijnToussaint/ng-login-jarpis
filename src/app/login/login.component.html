@@ -1,1 +1,9 @@
-<p>login works!</p>
+<form #f="ngForm" (ngSubmit)="signIn(f.value)">
+    <h2>Log in:</h2>
+    <div *ngIf="invalidLogin">Invalid username and/or password.</div>
+    <label for="inputEmail">Email:</label>
+    <input type="email" id="inputEmail" name="email" ngModel class="form-control" placeholder="Email address" required autofocus>
+    <label for="inputPassword">Password:</label>
+    <input type="password" id="inputPassword" name="password" ngModel class="form-control" placeholder="Password" required>
+    <button type="submit">Sign in</button>
+</form>
