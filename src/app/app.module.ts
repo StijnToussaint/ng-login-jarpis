@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth-guard.service';
 import { RouterModule } from '@angular/router';
 import { AuthService } from './auth.service';
 import { HttpInterceptorAuth } from './http-interceptor';
@@ -32,7 +33,8 @@ import { PrivateHomeComponent } from './private-home/private-home.component';
       useClass:HttpInterceptorAuth,
       multi:true
     },
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
