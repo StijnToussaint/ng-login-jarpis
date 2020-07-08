@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service';
 import { HttpInterceptorAuth } from './http-interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -24,7 +25,9 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
       provide:HTTP_INTERCEPTORS,
       useClass:HttpInterceptorAuth,
       multi:true
-    }],
+    },
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
