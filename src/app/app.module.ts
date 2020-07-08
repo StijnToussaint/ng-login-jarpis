@@ -1,6 +1,6 @@
-import { AuthGuard } from './auth-guard.service';
+import { AuthGuard } from './services/auth-guard.service';
 import { RouterModule } from '@angular/router';
-import { AuthService } from './auth.service';
+import { AuthService } from './services/auth.service';
 import { HttpInterceptorAuth } from './http-interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';

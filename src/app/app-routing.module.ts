@@ -1,4 +1,4 @@
-import { AuthGuard } from './auth-guard.service';
+import { AuthGuard } from './services/auth-guard.service';
 import { PrivateHomeComponent } from './private-home/private-home.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
