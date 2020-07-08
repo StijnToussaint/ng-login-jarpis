@@ -1,8 +1,11 @@
 <h1>Hello World! app-component</h1>
-<ul>
-  <li><a routerLink="">Home</a></li>
-  <li *ngIf="authService.isLoggedIn()"><a routerLink="private-home">Private-home</a></li>
-  <li *ngIf="!authService.isLoggedIn()"><a routerLink="login">Login</a></li>
-  <li *ngIf="authService.isLoggedIn()"><a (click)="authService.logout()">Logout</a></li>
+<ul id="menu">
+  <li class="menuItem"><a routerLink="">Home</a></li>
+  <li class="menuItem" *ngIf="authService.isLoggedIn()"><a routerLink="private-home">Private-home</a></li>
+  <li class="menuItem" *ngIf="!authService.isLoggedIn()"><a routerLink="login">Login</a></li>
+  <li class="menuItem" *ngIf="authService.isLoggedIn()"><a (click)="authService.logout()">Logout</a></li>
+
+  <li class="menuItem" *ngIf="authService.isLoggedIn()">{{ authService.currentUser.firstName }}</li>
+  <li class="avatar" *ngIf="authService.isLoggedIn()"><img [src]="authService.currentUser.avatar"></li>
 </ul>
 <router-outlet></router-outlet>
