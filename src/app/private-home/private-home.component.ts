@@ -1,3 +1,4 @@
+import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./private-home.component.scss']
 })
 export class PrivateHomeComponent implements OnInit {
-
-  constructor() { }
+  authService;
+  constructor(private _authService: AuthService) { 
+    this.authService = _authService;
+  }
 
   ngOnInit(): void {
   }

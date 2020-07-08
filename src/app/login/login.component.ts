@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(credentials).subscribe(
       result => {
         if(result){
-          this.route.navigate(['']);
+          this.route.navigate(['private-home']);
         }else{
           this.invalidLogin = true;
         }

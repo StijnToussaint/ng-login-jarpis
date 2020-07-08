@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
+  currentUser;
+
   constructor(private http: HttpClient, private route: Router) { }
 
   login(credentials){
@@ -35,7 +37,7 @@ export class AuthService {
     try{
       let token = localStorage.getItem("token");
       let decoded = jwt_decode(token);
-      // console.log(decoded);
+      this.currentUser = decoded;
       return true;
     }catch{
       return false;
