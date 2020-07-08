@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { AuthService } from './auth.service';
 import { HttpInterceptorAuth } from './http-interceptor';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,7 +21,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [
     {

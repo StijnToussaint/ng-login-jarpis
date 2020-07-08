@@ -1,4 +1,4 @@
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { AppRoutingModule } from './../app-routing.module';
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
@@ -10,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService, private routerModule: RouterModule) { }
+  invalidLogin = false;
+
+  constructor(private authService: AuthService, private route: Router) { }
 
   ngOnInit(): void {
   }
@@ -18,7 +20,11 @@ export class LoginComponent implements OnInit {
   signIn(credentials){
     this.authService.login(credentials).subscribe(
       result => {
-        console.log(result);   
+        if(result){
+          this.route.navigate(['']);
+        }else{
+          this.invalidLogin = true;
+        }
       }
     );
   }
