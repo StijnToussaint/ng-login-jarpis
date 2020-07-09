@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { UsersService } from './../services/users.service';
 import { AuthService } from '../services/auth.service';
 import { Component, OnInit } from '@angular/core';
@@ -10,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class PrivateHomeComponent implements OnInit {
   authService;
   users;
-  constructor(private _authService: AuthService, private usersService: UsersService) { 
+  constructor(private _authService: AuthService, private usersService: UsersService, private router: Router) { 
     this.authService = _authService;
   }
 
@@ -18,6 +19,7 @@ export class PrivateHomeComponent implements OnInit {
     this.usersService.getUsers(0,10).subscribe(
       result => {
         this.users = result["data"];
+        console.log(this.users);
       }
     );
   }

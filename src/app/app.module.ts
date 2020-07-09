@@ -12,13 +12,15 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { PrivateHomeComponent } from './private-home/private-home.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    PrivateHomeComponent
+    PrivateHomeComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,

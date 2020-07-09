@@ -1,6 +1,10 @@
 <h2>Welkom {{ authService.currentUser.firstName }}</h2>
 <ul>
     <li *ngFor="let user of users;">
-        {{ user.firstName }}
+        <a [routerLink]="user.id">
+            {{ user.firstName }}
+            {{ user.lastName }}
+            <img [src]="user.avatar">
+        </a>
     </li>
 </ul>
