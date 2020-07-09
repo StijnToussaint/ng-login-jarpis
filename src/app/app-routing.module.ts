@@ -1,3 +1,4 @@
+import { UserNewComponent } from './user-new/user-new.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { AuthGuard } from './services/auth-guard.service';
@@ -22,6 +23,11 @@ const routes: Routes = [
     component:PrivateHomeComponent,
     canActivate: [AuthGuard],
   },  
+  {
+    path: "private-home/new-user",
+    component:UserNewComponent,
+    canActivate: [AuthGuard]
+  },
   {
     path: "private-home/:id/update",
     component:UserUpdateComponent,

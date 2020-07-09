@@ -1,0 +1,16 @@
+<button (click)="back()">Back</button>
+<form #f="ngForm" (ngSubmit)="newUser()">
+    <h2>New User:</h2>
+    <div *ngIf="invalidUser">Invalid user</div>
+    <label for="inputFirstName">First name:</label>
+    <input type="text" id="inputfirstName" name="firstName" [formControl]="firstName" required>
+    <label for="inputLastName">Last name:</label>
+    <input type="text" id="inputlastName" name="lastName" [formControl]="lastName" required>
+    <label for="inputEmail">Email:</label>
+    <input type="email" id="inputEmail" name="email" [formControl]="email" required>
+    <label for="inputPassword">Password:</label>
+    <input type="password" id="inputPassword" name="password" [formControl]="password" required>
+    <label for="inputAvatar">Link to avatar:</label>
+    <input type="text" id="inputAvatar" name="avatar" [formControl]="avatar" required>
+    <button type="submit">Create</button>
+</form>

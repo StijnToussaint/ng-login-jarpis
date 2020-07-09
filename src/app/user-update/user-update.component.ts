@@ -25,7 +25,7 @@ export class UserUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params["id"];
-    this.usersService.getUsers(this.id - 1,1).subscribe(
+    this.usersService.getUsersById(this.id).subscribe(
       result => {
         this.user = result["data"][0];
         this.firstName.setValue(this.user["firstName"]);
@@ -49,7 +49,6 @@ export class UserUpdateComponent implements OnInit {
       "lastName":this.lastName.value,
       "password":this.password.value
     }
-    console.log("update");
     this.updateUserService.updateUser(this.id,newUser).subscribe(
       result => {
         if(result){
