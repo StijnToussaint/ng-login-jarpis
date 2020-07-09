@@ -1,28 +1,16 @@
-<p>user-update works!</p>
 <button (click)="back()">Back</button>
-<ul>
-    <li>
-        Name:
-        {{ user.firstName }}
-        {{ user.lastName }}
-    </li>
-    <li>
-        <img [src]="user.avatar">
-    </li>  
-    <li>
-        Id:
-        {{ user.id }}
-    </li>
-    <li>
-        Email:
-        {{ user.email }}
-    </li> 
-    <li>
-        Password:
-        {{ user.password }}
-    </li>
-    <li>
-        Created at:
-        {{ user.created_at }}
-    </li>
-</ul>
+<form #f="ngForm" (ngSubmit)="update()">
+    <h2>User update:</h2>
+    <div *ngIf="invalidUpdate">Invalid update</div>
+    <label for="inputFirstName">First name:</label>
+    <input type="text" id="inputfirstName" name="firstName" [formControl]="firstName" required>
+    <label for="inputLastName">Last name:</label>
+    <input type="text" id="inputlastName" name="lastName" [formControl]="lastName" required>
+    <label for="inputEmail">Email:</label>
+    <input type="email" id="inputEmail" name="email" [formControl]="email" required>
+    <label for="inputPassword">Password:</label>
+    <input type="password" id="inputPassword" name="password" [formControl]="password" required>
+    <label for="inputAvatar">Link to avatar:</label>
+    <input type="text" id="inputAvatar" name="avatar" [formControl]="avatar" required>
+    <button type="submit">Update</button>
+</form>
