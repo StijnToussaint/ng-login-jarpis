@@ -19,7 +19,6 @@ export class PrivateHomeComponent implements OnInit {
     this.usersService.getUsers(0,10).subscribe(
       result => {
         this.users = result["data"];
-        console.log(this.users);
       }
     );
   }
