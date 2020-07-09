@@ -1,6 +1,30 @@
 <button (click)="back()">Back</button>
-{{ user.firstName }}
-{{ user.lastName }}
-<img [src]="user.avatar">
-{{ user.email }}
-{{ user.created_at }}
+<ul>
+    <li>
+        Name:
+        {{ user.firstName }}
+        {{ user.lastName }}
+    </li>
+    <li>
+        <img [src]="user.avatar">
+    </li>  
+    <li>
+        Id:
+        {{ user.id }}
+    </li>
+    <li>
+        Email:
+        {{ user.email }}
+    </li> 
+    <li>
+        Password:
+        {{ user.password }}
+    </li>
+    <li>
+        Created at:
+        {{ user.created_at }}
+    </li>
+</ul>
+
+<button>Update</button>
+<button>Delete</button>

@@ -1,7 +1,9 @@
-<h2>Welkom {{ authService.currentUser.firstName }}</h2>
+<h2>Welcome {{ authService.currentUser.firstName }}</h2>
+<button>New user</button>
 <ul>
     <li *ngFor="let user of users;">
         <a [routerLink]="user.id">
+            {{ user.id }}
             {{ user.firstName }}
             {{ user.lastName }}
             <img [src]="user.avatar">
