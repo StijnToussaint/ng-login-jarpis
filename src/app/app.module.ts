@@ -1,5 +1,5 @@
+import { UsersService } from './services/users.service';
 import { AuthGuard } from './services/auth-guard.service';
-import { RouterModule } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { HttpInterceptorAuth } from './http-interceptor';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,13 +12,17 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { PrivateHomeComponent } from './private-home/private-home.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { UserUpdateComponent } from './user-update/user-update.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    PrivateHomeComponent
+    PrivateHomeComponent,
+    UserDetailsComponent,
+    UserUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,8 @@ import { PrivateHomeComponent } from './private-home/private-home.component';
       multi:true
     },
     AuthService,
-    AuthGuard
+    AuthGuard,
+    UsersService
   ],
   bootstrap: [AppComponent]
 })
