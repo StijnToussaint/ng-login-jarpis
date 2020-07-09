@@ -8,11 +8,10 @@ export class HttpInterceptorAuth implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     // Add Auth Token
-    // In production you would get the token value from an auth service
-    const hardcodedToken = 'Test123';
+    const token = localStorage.getItem("token");
     req = req.clone({
       setHeaders: {
-        Authorization: `Bearer ${hardcodedToken}`
+        Authorization: `Bearer ${token}`
       }
     });
 

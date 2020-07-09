@@ -1,5 +1,5 @@
+import { UsersService } from './services/users.service';
 import { AuthGuard } from './services/auth-guard.service';
-import { RouterModule } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { HttpInterceptorAuth } from './http-interceptor';
 import { BrowserModule } from '@angular/platform-browser';
@@ -34,7 +34,8 @@ import { PrivateHomeComponent } from './private-home/private-home.component';
       multi:true
     },
     AuthService,
-    AuthGuard
+    AuthGuard,
+    UsersService
   ],
   bootstrap: [AppComponent]
 })
