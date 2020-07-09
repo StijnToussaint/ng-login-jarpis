@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { PrivateHomeComponent } from './private-home/private-home.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { UserUpdateComponent } from './user-update/user-update.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     LoginComponent,
     HomeComponent,
     PrivateHomeComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    UserUpdateComponent
   ],
   imports: [
     BrowserModule,
