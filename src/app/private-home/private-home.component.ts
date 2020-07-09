@@ -16,11 +16,15 @@ export class PrivateHomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.usersService.getUsers(0,10).subscribe(
+    this.usersService.getUsers(0,200).subscribe(
       result => {
         this.users = result["data"];
       }
     );
+  }
+
+  newUser(){
+    this.router.navigateByUrl("private-home/new-user");
   }
 
 }
