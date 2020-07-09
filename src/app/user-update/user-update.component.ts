@@ -1,3 +1,4 @@
+import { UpdateUserService } from './../services/update-user.service';
 import { UsersService } from './../services/users.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -16,9 +17,10 @@ export class UserUpdateComponent implements OnInit {
   email = new FormControl("");
   password = new FormControl("");
   avatar = new FormControl("");
+  invalidUpdate;
 
-
-  constructor(private route: ActivatedRoute, private usersService: UsersService, private router: Router) { 
+  constructor(private route: ActivatedRoute, private usersService: UsersService, 
+    private router: Router, private updateUserService: UpdateUserService) { 
   }
 
   ngOnInit(): void {
@@ -40,7 +42,23 @@ export class UserUpdateComponent implements OnInit {
   }
 
   update(){
-    //Pass info to service
+    let newUser = {
+      "avatar":this.avatar.value,
+      "email":this.email.value,
+      "firstName":this.firstName.value,
+      "lastName":this.lastName.value,
+      "password":this.password.value
+    }
+    console.log("update");
+    this.updateUserService.updateUser(this.id,newUser).subscribe(
+      result => {
+        if(result){
+          this.router.navigate(['private-home/'+this.id]);
+        }else{
+          this.invalidUpdate = true;
+        }
+      }
+    );
   }
 
 }
