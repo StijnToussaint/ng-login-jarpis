@@ -11,6 +11,8 @@ import { Component, OnInit } from '@angular/core';
 export class PrivateHomeComponent implements OnInit {
   authService;
   users;
+  startIndex = 0;
+  endIndex = 10;
   constructor(private _authService: AuthService, private usersService: UsersService, private router: Router) { 
     this.authService = _authService;
   }
@@ -25,6 +27,16 @@ export class PrivateHomeComponent implements OnInit {
 
   newUser(){
     this.router.navigateByUrl("private-home/new-user");
+  }
+
+  getArrayFromNumber(length){
+    return new Array(Math.ceil(length/10));
+  }
+
+  updateIndex(pageIndex){
+    this.startIndex = pageIndex * 10;
+    this.endIndex = this.startIndex + 10;
+
   }
 
 }
