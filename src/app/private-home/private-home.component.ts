@@ -36,7 +36,7 @@ export class PrivateHomeComponent implements OnInit {
   updateIndex(pageIndex){
     this.startIndex = pageIndex * 10;
     this.endIndex = this.startIndex + 10;
-
+    window.scrollTo(0, 0);
   }
 
 }
