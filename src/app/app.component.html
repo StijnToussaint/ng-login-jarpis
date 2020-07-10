@@ -1,10 +1,17 @@
 <ul id="menu">
-  <li class="menuItem"><a routerLink="">Home</a></li>
-  <li class="menuItem" *ngIf="authService.isLoggedIn()"><a routerLink="private-home">Private-home</a></li>
-  <li class="menuItem" *ngIf="!authService.isLoggedIn()"><a routerLink="login">Login</a></li>
-  <li *ngIf="authService.isLoggedIn()" (click)="dropDown()"> {{ authService.currentUser.firstName }} {{ authService.currentUser.lastName }}</li>
-  <li *ngIf="authService.isLoggedIn() && avatarClicked" class="menuItem"><a (click)="authService.logout(); this.avatarClicked = false;">Logout</a></li>
-  <li class="avatar" *ngIf="authService.isLoggedIn()"><img [src]="authService.currentUser.avatar"></li>
-
+  <li class="menuItem"><button class="menuButton" routerLink="">Home</button></li>
+  <li class="menuItem" *ngIf="authService.isLoggedIn()"><button class="menuButton" routerLink="private-home">Private-home</button></li>
+  <li class="menuItem" *ngIf="!authService.isLoggedIn()"><button class="menuButton" routerLink="login">Login</button></li>
+  <li class="menuItem" id="avatarMenu" *ngIf="authService.isLoggedIn()">
+      <button class="menuItem" id="avatarButton" (click)="dropDown()">{{ authService.currentUser.firstName }} {{ authService.currentUser.lastName }}</button>
+      <img [src]="authService.currentUser.avatar">
+  </li>
 </ul>
+<div id="logoutDropdown" *ngIf="avatarClicked && authService.isLoggedIn()">
+  <ul>
+    <li class="logoutDropdownItem"><button class="menuButton" (click)="authService.logout(); this.avatarClicked = false;">Logout</button></li>
+    <li class="logoutDropdownItem"><button class="menuButton" >Extra options</button></li>
+    <li class="logoutDropdownItem"><button class="menuButton" >Another option</button></li>
+  </ul>
+</div>
 <router-outlet></router-outlet>
