@@ -9,9 +9,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ng-login-jarpis';
   authService;
+  avatarClicked = false;
 
   constructor(private authService_: AuthService) {
     this.authService = authService_;
+  }
+
+  dropDown(){
+    this.avatarClicked = !this.avatarClicked;
   }
 
 }

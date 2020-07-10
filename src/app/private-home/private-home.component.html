@@ -1,7 +1,7 @@
 <h2>Welcome {{ authService.currentUser.firstName }}</h2>
 <button (click)="newUser()">New user</button>
 <ul>
-    <li *ngFor="let user of users;">
+    <li *ngFor="let user of users | slice:startIndex:endIndex">
         <a [routerLink]="user.id">
             {{ user.id }}
             {{ user.firstName }}
@@ -10,3 +10,20 @@
         </a>
     </li>
 </ul>
+<nav>
+    <ul>
+        <li>
+            <a>
+                &laquo;
+            </a>
+        </li>
+        <li *ngFor="let i of getArrayFromNumber(users.length); let in = index"
+            (click)="updateIndex(in);"
+        ><a>{{ in+1 }}</a></li>
+        <li>
+            <a>
+                &raquo;
+            </a>
+        </li>
+    </ul>
+</nav>

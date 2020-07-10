@@ -27,7 +27,7 @@ export class UserUpdateComponent implements OnInit {
     this.id = this.route.snapshot.params["id"];
     this.usersService.getUsersById(this.id).subscribe(
       result => {
-        this.user = result["data"][0];
+        this.user = result;
         this.firstName.setValue(this.user["firstName"]);
         this.lastName.setValue(this.user["lastName"]);
         this.email.setValue(this.user["email"]);
