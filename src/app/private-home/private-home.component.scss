@@ -1,0 +1,22 @@
+#userList{
+    list-style:none;
+    padding-left:0;
+}
+
+.userListItem{
+    padding: 20px;
+    cursor: pointer;
+    background-color: lightgrey;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+.userListItem a{
+    text-decoration: none;
+    color: black;
+}
+
+.avatarUserList{
+    margin-top: 10px;
+}

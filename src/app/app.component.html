@@ -4,7 +4,7 @@
   <li class="menuItem" *ngIf="!authService.isLoggedIn()"><button class="menuButton" routerLink="login">Login</button></li>
   <li class="menuItem" id="avatarMenu" *ngIf="authService.isLoggedIn()">
       <button class="menuItem" id="avatarButton" (click)="dropDown()">{{ authService.currentUser.firstName }} {{ authService.currentUser.lastName }}</button>
-      <img [src]="authService.currentUser.avatar">
+      <img class="avatar" [src]="authService.currentUser.avatar">
   </li>
 </ul>
 <div id="logoutDropdown" *ngIf="avatarClicked && authService.isLoggedIn()">
