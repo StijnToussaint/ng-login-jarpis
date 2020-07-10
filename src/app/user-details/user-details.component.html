@@ -1,5 +1,5 @@
 <button (click)="back()">Back</button>
-<ul>
+<ul id="userDetailList">
     <li>
         Name:
         {{ user.firstName }}
@@ -26,5 +26,6 @@
     </li>
 </ul>
 
-<button routerLink="update">Update</button>
-<button (click)="openDialog();">Delete</button>
+<button class="userDetailButton" routerLink="update">Update</button>
+<br>
+<button class="userDetailButton" (click)="openDialog();">Delete</button>
