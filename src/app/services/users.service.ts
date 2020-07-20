@@ -16,6 +16,7 @@ export class UsersService {
     // params1.set("offset", offset);
     // params1.set("limit", limit);
     return this.http.get("https://testapi.jarpiscloud.nl/api/v1/users?offset="+offset+"&limit="+limit);
+
   }
 
   getUsersById(id){

@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { UsersService } from './../services/users.service';
 import { AuthService } from '../services/auth.service';
@@ -10,7 +11,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrivateHomeComponent implements OnInit {
   authService;
-  users;
+  users$;
+  usersLength;
   startIndex = 0;
   endIndex = 10;
   constructor(private _authService: AuthService, private usersService: UsersService, private router: Router) { 
@@ -18,11 +20,7 @@ export class PrivateHomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.usersService.getUsers(0,200).subscribe(
-      result => {
-        this.users = result["data"];
-      }
-    );
+    this.users$ = this.usersService.getUsers(0,200);
   }
 
   newUser(){
