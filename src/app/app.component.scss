@@ -4,9 +4,6 @@
     list-style:none;
     margin:0;
     background-color: lightgrey;
-    border-bottom-style: solid;
-    border-color: black;
-    border-width: 1px;
 }
 
 #avatar{
@@ -26,8 +23,10 @@
 
 #logoutDropdown{
     float: right;
-    background-color: lightgrey;
+    position: absolute;
+    background-color: darkgrey;
     width:295px;
+    margin-top: -4px;
     padding: 10px;
     list-style-type: none;
     z-index: 10;
@@ -61,6 +60,26 @@
     border-radius: 0px;
 }
 
+#avatarButton:hover{
+    background-color: darkgrey;
+}
+
 #content{
     margin: 60px;
+}
+
+.hoverMenu:hover #logoutDropdown{
+    visibility: visible;
+}
+
+.hoverMenu #logoutDropdown{
+    visibility: hidden;
+}
+
+.dropdownButton{
+    background-color: lightgrey;
+}
+
+.dropdownButton:hover{
+    background-color: grey;
 }

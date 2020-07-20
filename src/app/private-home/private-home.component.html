@@ -1,7 +1,7 @@
 <h2>Welcome {{ authService.currentUser.firstName }}</h2>
 <button (click)="newUser()">New user</button>
 <ul id="userList">
-    <li class="userListItem" *ngFor="let user of users | slice:startIndex:endIndex">
+    <li class="userListItem" *ngFor="let user of (users$ | async)?.data | slice:startIndex:endIndex">
         <a [routerLink]="user.id">
             {{ user.firstName }}
             {{ user.lastName }}
@@ -13,15 +13,17 @@
 </ul>
 <nav>
     <ul id="pagination">
-        <li class="paginationItem">
+        <li class="paginationItem" (click)="previousPage()">
             <a>
                 &laquo;
             </a>
         </li>
-        <li class="paginationItem" *ngFor="let i of getArrayFromNumber(users.length); let in = index"
+        <li class="paginationItem"
+            *ngFor="let i of getArrayFromNumber((users$ | async)?.data.length); let in = index"
+            [ngClass]="{'paginationItemActive' : this.currentPage == in}"
             (click)="updateIndex(in);"
         ><a>{{ in+1 }}</a></li>
-        <li class="paginationItem">
+        <li class="paginationItem" (click)="nextPage()">
             <a>
                 &raquo;
             </a>

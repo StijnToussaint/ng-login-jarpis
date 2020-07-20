@@ -15,8 +15,4 @@ export class AppComponent {
     this.authService = authService_;
   }
 
-  dropDown(){
-    this.avatarClicked = !this.avatarClicked;
-  }
-
 }
