@@ -13,7 +13,7 @@
 </ul>
 <nav>
     <ul id="pagination">
-        <li class="paginationItem">
+        <li class="paginationItem" (click)="previousPage()">
             <a>
                 &laquo;
             </a>
@@ -21,7 +21,7 @@
         <li class="paginationItem" *ngFor="let i of getArrayFromNumber((users$ | async)?.data.length); let in = index"
             (click)="updateIndex(in);"
         ><a>{{ in+1 }}</a></li>
-        <li class="paginationItem">
+        <li class="paginationItem" (click)="nextPage()">
             <a>
                 &raquo;
             </a>
