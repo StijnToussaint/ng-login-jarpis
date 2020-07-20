@@ -1,5 +1,5 @@
 <button (click)="back()">Back</button>
-<form #f="ngForm" (ngSubmit)="newUser()" [formGroup] = "newUserForm">
+<form (ngSubmit)="newUser()" [formGroup] = "newUserForm">
     <h2>New User:</h2>
     <div *ngIf="invalidUser">Invalid user</div>
     <label for="inputFirstName">First name:</label>
