@@ -4,9 +4,6 @@
     list-style:none;
     margin:0;
     background-color: lightgrey;
-    border-bottom-style: solid;
-    border-color: black;
-    border-width: 1px;
 }
 
 #avatar{
@@ -26,8 +23,10 @@
 
 #logoutDropdown{
     float: right;
+    position: absolute;
     background-color: lightgrey;
     width:295px;
+    margin-top: -4px;
     padding: 10px;
     list-style-type: none;
     z-index: 10;
@@ -63,4 +62,12 @@
 
 #content{
     margin: 60px;
+}
+
+.hoverMenu:hover #logoutDropdown{
+    visibility: visible;
+}
+
+.hoverMenu #logoutDropdown{
+    visibility: hidden;
 }
