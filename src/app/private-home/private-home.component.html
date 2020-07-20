@@ -18,7 +18,9 @@
                 &laquo;
             </a>
         </li>
-        <li class="paginationItem" *ngFor="let i of getArrayFromNumber((users$ | async)?.data.length); let in = index"
+        <li class="paginationItem"
+            *ngFor="let i of getArrayFromNumber((users$ | async)?.data.length); let in = index"
+            [ngClass]="{'paginationItemActive' : this.currentPage == in}"
             (click)="updateIndex(in);"
         ><a>{{ in+1 }}</a></li>
         <li class="paginationItem" (click)="nextPage()">
