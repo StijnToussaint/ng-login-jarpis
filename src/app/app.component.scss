@@ -24,7 +24,7 @@
 #logoutDropdown{
     float: right;
     position: absolute;
-    background-color: lightgrey;
+    background-color: darkgrey;
     width:295px;
     margin-top: -4px;
     padding: 10px;
@@ -60,6 +60,10 @@
     border-radius: 0px;
 }
 
+#avatarButton:hover{
+    background-color: darkgrey;
+}
+
 #content{
     margin: 60px;
 }
@@ -70,4 +74,12 @@
 
 .hoverMenu #logoutDropdown{
     visibility: hidden;
+}
+
+.dropdownButton{
+    background-color: lightgrey;
+}
+
+.dropdownButton:hover{
+    background-color: grey;
 }
