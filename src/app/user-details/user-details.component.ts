@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { ConfirmDialogComponent } from './../confirm-dialog/confirm-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteUserService } from './../services/delete-user.service';
@@ -11,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./user-details.component.scss']
 })
 export class UserDetailsComponent implements OnInit {
-  user;
+  user$ : Observable<any>;
   invalidDelete;
   constructor(private usersService: UsersService, private route: ActivatedRoute, private router: Router, 
     private deleteUserService: DeleteUserService, private dialog: MatDialog) {
@@ -19,11 +20,7 @@ export class UserDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     let id = this.route.snapshot.params["id"];
-    this.usersService.getUsersById(id).subscribe(
-      result => {
-        this.user = result;
-      }
-    );
+    this.user$ = this.usersService.getUsersById(id)
   }
 
   back(){
@@ -38,9 +35,9 @@ export class UserDetailsComponent implements OnInit {
     );
   }
 
-  openDialog(){
+  openDialog(firstName){
     this.dialog.open(ConfirmDialogComponent, {
-      data: { name: this.user.firstName },
+      data: { name: firstName },
     }).afterClosed().subscribe(
       result => {
         if(result){

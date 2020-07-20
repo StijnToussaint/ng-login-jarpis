@@ -1,31 +1,33 @@
 <button (click)="back()">Back</button>
-<ul id="userDetailList">
-    <li>
-        Name:
-        {{ user.firstName }}
-        {{ user.lastName }}
-    </li>
-    <li>
-        <img [src]="user.avatar">
-    </li>  
-    <li>
-        Id:
-        {{ user.id }}
-    </li>
-    <li>
-        Email:
-        {{ user.email }}
-    </li> 
-    <li>
-        Password:
-        {{ user.password }}
-    </li>
-    <li>
-        Created at:
-        {{ user.created_at }}
-    </li>
-</ul>
+<div *ngIf = "user$ | async as user">
+    <ul id="userDetailList">
+        <li>
+            Name:
+            {{ user.firstName }}
+            {{ user.lastName }}
+        </li>
+        <li>
+            <img [src]="user.avatar">
+        </li>  
+        <li>
+            Id:
+            {{ user.id }}
+        </li>
+        <li>
+            Email:
+            {{ user.email }}
+        </li> 
+        <li>
+            Password:
+            {{ user.password }}
+        </li>
+        <li>
+            Created at:
+            {{ user.created_at }}
+        </li>
+    </ul>
 
-<button class="userDetailButton" routerLink="update">Update</button>
-<br>
-<button class="userDetailButton" (click)="openDialog();">Delete</button>
+    <button class="userDetailButton" routerLink="update">Update</button>
+    <br>
+    <button class="userDetailButton" (click)="openDialog(user.firstName);">Delete</button>
+</div>
