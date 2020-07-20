@@ -1,5 +1,5 @@
 import { NewUserService } from './../services/new-user.service';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,12 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-new.component.scss']
 })
 export class UserNewComponent implements OnInit {
-
-  firstName = new FormControl("");
-  lastName = new FormControl("");
-  email = new FormControl("");
-  password = new FormControl("");
-  avatar = new FormControl("");
+  newUserForm = new FormGroup({
+    firstName : new FormControl("", [Validators.required, Validators.minLength(2)]),
+    lastName : new FormControl("", [Validators.required, Validators.minLength(2)]),
+    email : new FormControl("", [Validators.required, Validators.email]),
+    password : new FormControl("", [Validators.required, Validators.minLength(2)]),
+    avatar : new FormControl("", [Validators.required, Validators.minLength(2)]),
+  })
   invalidUser;
 
   constructor(private router: Router, private newUserService: NewUserService) { }
@@ -28,11 +29,11 @@ export class UserNewComponent implements OnInit {
 
   newUser(){
     let newUser = {
-      "avatar":this.avatar.value,
-      "email":this.email.value,
-      "firstName":this.firstName.value,
-      "lastName":this.lastName.value,
-      "password":this.password.value
+      "avatar" : this.newUserForm.get('avatar'),
+      "email" : this.newUserForm.get('email'),
+      "firstName" : this.newUserForm.get('firstName'),
+      "lastName" : this.newUserForm.get('lastName'),
+      "password" : this.newUserForm.get('password')
     }
     this.newUserService.newUser(newUser).subscribe(
       result => {
@@ -43,6 +44,22 @@ export class UserNewComponent implements OnInit {
         }
       }
     );
+  }
+
+  get avatar(){
+    return this.newUserForm.get('avatar');
+  }
+  get email(){
+    return this.newUserForm.get('email');
+  }
+  get firstName(){
+    return this.newUserForm.get('firstName');
+  }
+  get lastName(){
+    return this.newUserForm.get('lastName');
+  }
+  get password(){
+    return this.newUserForm.get('password');
   }
 
 }
