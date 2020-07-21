@@ -21,20 +21,23 @@
     margin-top: 10px;
 }
 
+nav{
+    text-align: center;
+}
+
 #pagination{
     list-style:none;
+    display: inline-block;
+
 }
 
 .paginationItem{
     float:left;
-    margin: 10px;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
+    margin: 5px;
     background-color: darkgrey; /* Green */
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 10px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
