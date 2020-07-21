@@ -1,6 +1,6 @@
 <ul id="menu">
   <li class="menuItem"><button class="menuButton" routerLink="">Home</button></li>
-  <li class="menuItem" *ngIf="authService.isLoggedIn()"><button class="menuButton" routerLink="private-home">Private-home</button></li>
+  <li class="menuItem" *ngIf="authService.isLoggedIn()"><button class="menuButton" routerLink="private-home">Users</button></li>
   <li class="menuItem" *ngIf="!authService.isLoggedIn()"><button class="menuButton" routerLink="login">Login</button></li>
   <li class="menuItem hoverMenu" id="avatarMenu" *ngIf="authService.isLoggedIn()">
       <button class="menuItem hoverMenu" id="avatarButton">{{ authService.currentUser.firstName }} {{ authService.currentUser.lastName }}</button>
