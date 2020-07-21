@@ -7,6 +7,7 @@ import { HttpInterceptorAuth } from './http-interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -37,6 +38,7 @@ import { UserUpdateComponent } from './user-update/user-update.component';
     AppRoutingModule,
     ReactiveFormsModule,
     MatDialogModule,
+    MatGridListModule,
     BrowserAnimationsModule
   ],
   providers: [
