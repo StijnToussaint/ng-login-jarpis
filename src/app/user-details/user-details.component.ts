@@ -5,6 +5,7 @@ import { DeleteUserService } from './../services/delete-user.service';
 import { UsersService } from './../services/users.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NONE_TYPE } from '@angular/compiler';
 
 @Component({
   selector: 'app-user-details',
@@ -14,6 +15,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UserDetailsComponent implements OnInit {
   user$ : Observable<any>;
   invalidDelete;
+  noDialog = true;
   constructor(private usersService: UsersService, private route: ActivatedRoute, private router: Router, 
     private deleteUserService: DeleteUserService, private dialog: MatDialog) {
      }
@@ -36,15 +38,19 @@ export class UserDetailsComponent implements OnInit {
   }
 
   openDialog(firstName){
-    this.dialog.open(ConfirmDialogComponent, {
-      data: { name: firstName },
-    }).afterClosed().subscribe(
-      result => {
-        if(result){
-          this.delete();
+    if(this.noDialog){
+      this.dialog.open(ConfirmDialogComponent, {
+        data: { name: firstName }
+      }).afterClosed().subscribe(
+        result => {
+          this.noDialog = true;
+          if(result){
+            this.delete();
+          }
         }
-      }
-    );
+      );
+    }
+    this.noDialog = false;
   }
   
 

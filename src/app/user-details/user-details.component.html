@@ -7,7 +7,9 @@
             {{ user.lastName }}
         </li>
         <li>
-            <img [src]="user.avatar">
+            <div class="avatarContainer">
+                <img class="avatar" [src]="user.avatar">
+            </div>
         </li>  
         <li>
             Id:

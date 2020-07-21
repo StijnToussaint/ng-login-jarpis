@@ -3,8 +3,7 @@
 <ul id="userList">
     <li class="userListItem" *ngFor="let user of (users$ | async)?.data | slice:startIndex:endIndex">
         <a [routerLink]="user.id">
-            {{ user.firstName }}
-            {{ user.lastName }}
+            {{ ((user.firstName + " " + user.lastName).length>14)? ((user.firstName + " " + user.lastName) | slice:0:14)+'..':((user.firstName + " " + user.lastName)) }}
             <div class="avatarContainer avatarUserList">
                 <img class="avatar" [src]="user.avatar">
             </div>

@@ -1,5 +1,6 @@
-<p>Are you sure you want to delete {{ data.name }}'s account?</p>
-<button mat-dialog-close="true" (click)="accept()">Confirm</button>
-<button mat-dialog-close="false" (click)="decline()">Cancle</button>
-
+<div id="dialogBox">
+    <p>Are you sure you want to delete {{ data.name }}'s account?</p>
+    <button class="dialogButton" mat-dialog-close="true" (click)="accept()">Confirm</button>
+    <button class="dialogButton" mat-dialog-close="false" (click)="decline()">Cancle</button>
+</div>
 
