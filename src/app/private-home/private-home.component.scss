@@ -1,15 +1,20 @@
 #userList{
-    list-style:none;
     padding-left:0;
+    width: 1000px;
+    display: inline-block;
+}
+
+#userListContainer{
+    text-align: center;
 }
 
 .userListItem{
     padding: 20px;
     cursor: pointer;
     background-color: lightgrey;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 150px;
+    text-decoration: none;
+    color: black;
+    width: 250px;
 }
 
 .userListItem a{
