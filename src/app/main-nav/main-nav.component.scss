@@ -1,3 +1,10 @@
+$itemBackground: lightgrey;
+$logoutDropdownBackground: darkgrey;
+$avatarButtonActive: darkgrey;
+$inactiveDropdownButton: lightgrey;
+$activeDropdownButton: grey;
+$avatarBackground: black;
+
 .sidenav-container {
   height: 100%;
 }
@@ -30,7 +37,7 @@
   height: 100px;
   list-style:none;
   margin:0;
-  background-color: lightgrey;
+  background-color: $itemBackground;
 }
 
 .menuItem{
@@ -44,7 +51,7 @@
 #logoutDropdown{
   float: right;
   position: absolute;
-  background-color: darkgrey;
+  background-color: $logoutDropdownBackground;
   width:255px;
   margin-top: -4px;
   padding: 10px;
@@ -67,7 +74,6 @@
   float:right;
   margin-right: 130px;
   margin-left: 0;
-  background-color: white;
   cursor: default;
 }
 
@@ -80,7 +86,7 @@
 }
 
 #avatarButton:hover{
-  background-color: darkgrey;
+  background-color: $avatarButtonActive;
 }
 
 .hoverMenu:hover #logoutDropdown{
@@ -92,11 +98,11 @@
 }
 
 .dropdownButton{
-  background-color: lightgrey;
+  background-color: $inactiveDropdownButton;
 }
 
 .dropdownButton:hover{
-  background-color: grey;
+  background-color: $activeDropdownButton;
 }
 
 #logoutDropdownList{
@@ -104,7 +110,7 @@
 }
 
 .avatar{
-  background-color: black;
+  background-color: $avatarBackground;
   height: 100px;
   width: 100px;
   object-fit: fill;
@@ -113,7 +119,7 @@
 }
 
 mat-sidenav{
-  background-color: lightgrey;
+  background-color: $itemBackground;
   padding: 20px;
 }
 
@@ -144,7 +150,7 @@ mat-toolbar{
 .handsetToolbar{
   display: inline-block;
   width:100%;
-  background-color: lightgrey;
+  background-color: $itemBackground;
   padding: 10px;
 }
 
