@@ -9,10 +9,10 @@
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <ul id="sideMenu">
-        <li class="sideMenuItem"><button class="sideMenuButton" routerLink="">Home</button></li>
-        <li class="sideMenuItem" *ngIf="authService.isLoggedIn()"><button class="sideMenuButton" routerLink="private-home">Users</button></li>
-        <li class="sideMenuItem" *ngIf="!authService.isLoggedIn()"><button class="sideMenuButton" routerLink="login">Login</button></li>
-        <li class="sideMenuItem" *ngIf="authService.isLoggedIn()"><button class="sideMenuButton" (click)="authService.logout()">Logout</button></li>
+        <li class="sideMenuItem"><button class="sideMenuButton" routerLink="" (click)="drawer.toggle()">Home</button></li>
+        <li class="sideMenuItem" *ngIf="authService.isLoggedIn()"><button class="sideMenuButton" routerLink="private-home" (click)="drawer.toggle()">Users</button></li>
+        <li class="sideMenuItem" *ngIf="!authService.isLoggedIn()"><button class="sideMenuButton" routerLink="login" (click)="drawer.toggle()">Login</button></li>
+        <li class="sideMenuItem" *ngIf="authService.isLoggedIn()"><button class="sideMenuButton" (click)="authService.logout(); drawer.toggle()">Logout</button></li>
       </ul>
     </mat-nav-list>
   </mat-sidenav>
