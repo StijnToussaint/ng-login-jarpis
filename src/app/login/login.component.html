@@ -1,6 +1,5 @@
 <form #f="ngForm" (ngSubmit)="signIn(f.value)" class="form">
     <h2>Log in:</h2>
-    <div *ngIf="invalidLogin">Invalid username and/or password.</div>
     <label for="inputEmail">Email:</label>
     <br>
     <input class="loginInput" type="email" id="inputEmail" name="email" ngModel placeholder="Email address" required autofocus>
@@ -8,6 +7,7 @@
     <label for="inputPassword">Password:</label>
     <br>
     <input class="loginInput" type="password" id="inputPassword" name="password" ngModel placeholder="Password" required>
+    <div class="errorMessage" *ngIf="invalidLogin">Invalid username and/or password.</div>
     <br>
     <button type="submit">Sign in</button>
 </form>
