@@ -90,12 +90,7 @@ button:hover {
 }
 
 .avatar{
-    max-width: 100%;
-    height: auto;
-}
-
-.avatarContainer{
-    width:100px;
-    height:100px;
-    background-color: black;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
 }

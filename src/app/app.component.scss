@@ -6,9 +6,11 @@
     background-color: lightgrey;
 }
 
-#avatar{
+.avatar{
     background-color: black;
     height: 100px;
+    width: 100px;
+    object-fit: fill;
     list-style:none;
     margin:0;
 }
@@ -25,12 +27,11 @@
     float: right;
     position: absolute;
     background-color: darkgrey;
-    width:295px;
+    width:255px;
     margin-top: -4px;
     padding: 10px;
     list-style-type: none;
     z-index: 10;
-    margin-right: 60px;
 }
 
 .logoutDropdownItem{
@@ -46,9 +47,8 @@
 
 #avatarMenu{
     float:right;
-    margin-right: 100px;
+    margin-right: 130px;
     margin-left: 0;
-    padding-right:20px;
     background-color: white;
     cursor: default;
 }
@@ -58,6 +58,7 @@
     width: 175px;
     margin-left: 0;
     border-radius: 0px;
+    margin-right:0px;
 }
 
 #avatarButton:hover{
@@ -82,4 +83,8 @@
 
 .dropdownButton:hover{
     background-color: grey;
+}
+
+#logoutDropdownList{
+    padding-inline-start: 30px;
 }

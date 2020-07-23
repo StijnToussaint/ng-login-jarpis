@@ -6,7 +6,7 @@
       <button class="menuItem hoverMenu" id="avatarButton">{{ authService.currentUser.firstName }} {{ authService.currentUser.lastName }}</button>
       <img class="avatar hoverMenu" [src]="authService.currentUser.avatar">
       <div class="hoverMenu" id="logoutDropdown" *ngIf="authService.isLoggedIn()">
-        <ul>
+        <ul id="logoutDropdownList">
           <li class="logoutDropdownItem"><button class="menuButton dropdownButton" (click)="authService.logout()">Logout</button></li>
           <li class="logoutDropdownItem"><button class="menuButton dropdownButton" >Extra options</button></li>
           <li class="logoutDropdownItem"><button class="menuButton dropdownButton" >Another option</button></li>
