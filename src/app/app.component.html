@@ -1,19 +1,5 @@
-<ul id="menu">
-  <li class="menuItem"><button class="menuButton" routerLink="">Home</button></li>
-  <li class="menuItem" *ngIf="authService.isLoggedIn()"><button class="menuButton" routerLink="private-home">Users</button></li>
-  <li class="menuItem" *ngIf="!authService.isLoggedIn()"><button class="menuButton" routerLink="login">Login</button></li>
-  <li class="menuItem hoverMenu" id="avatarMenu" *ngIf="authService.isLoggedIn()">
-      <button class="menuItem hoverMenu" id="avatarButton">{{ authService.currentUser.firstName }} {{ authService.currentUser.lastName }}</button>
-      <img class="avatar hoverMenu" [src]="authService.currentUser.avatar">
-      <div class="hoverMenu" id="logoutDropdown" *ngIf="authService.isLoggedIn()">
-        <ul id="logoutDropdownList">
-          <li class="logoutDropdownItem"><button class="menuButton dropdownButton" (click)="authService.logout()">Logout</button></li>
-          <li class="logoutDropdownItem"><button class="menuButton dropdownButton" >Extra options</button></li>
-          <li class="logoutDropdownItem"><button class="menuButton dropdownButton" >Another option</button></li>
-        </ul>
-      </div>
-  </li>
-</ul>
-<div id="content">
-  <router-outlet></router-outlet>
-</div>
+<main-nav>
+  <div id="content">
+    <router-outlet></router-outlet>
+  </div>
+</main-nav>

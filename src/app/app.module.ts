@@ -19,6 +19,13 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { PrivateHomeComponent } from './private-home/private-home.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -28,7 +35,8 @@ import { UserUpdateComponent } from './user-update/user-update.component';
     PrivateHomeComponent,
     UserDetailsComponent,
     UserUpdateComponent,
-    UserNewComponent
+    UserNewComponent,
+    MainNavComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +47,13 @@ import { UserUpdateComponent } from './user-update/user-update.component';
     ReactiveFormsModule,
     MatDialogModule,
     MatGridListModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [
     {
