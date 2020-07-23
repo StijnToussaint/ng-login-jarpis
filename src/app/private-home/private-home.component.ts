@@ -17,12 +17,31 @@ export class PrivateHomeComponent implements OnInit {
   endIndex = 9;
   currentPage = 0;
   totalPages;
+  breakpoint;
+
   constructor(private _authService: AuthService, private usersService: UsersService, private router: Router) { 
     this.authService = _authService;
   }
 
   ngOnInit(): void {
     this.users$ = this.usersService.getUsers(0,200);
+    if(window.innerWidth <= 610){
+      this.breakpoint = 1;
+    }else if(window.innerWidth <= 900){
+      this.breakpoint = 2;
+    }else{
+      this.breakpoint = 3;
+    };
+  }
+
+  onResize(){
+    if(window.innerWidth <= 610){
+      this.breakpoint = 1;
+    }else if(window.innerWidth <= 900){
+      this.breakpoint = 2;
+    }else{
+      this.breakpoint = 3;
+    };
   }
 
   newUser(){
