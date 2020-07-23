@@ -114,14 +114,41 @@
 
 mat-sidenav{
   background-color: lightgrey;
+  padding: 20px;
 }
 
 #sideMenu{
   list-style: none;
+  padding-inline-start: 0;
 }
 
 mat-toolbar{
   align-items: normal;
   display: inline;
   padding: 0;
+}
+
+.sideMenuItem{
+  cursor: pointer;
+  width:100%;
+  margin-bottom:20px;
+  text-align:center;
+}
+
+.sideMenuButton{
+  height:100%;
+  width: 150px;
+  border-radius: 0px;
+}
+
+.handsetToolbar{
+  display: inline-block;
+  width:100%;
+  background-color: lightgrey;
+  padding: 10px;
+}
+
+#sideMenuButton{
+  width:100px;
+  border-radius:0px;
 }

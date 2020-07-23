@@ -9,22 +9,23 @@
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <ul id="sideMenu">
-        <li class="sideMenuItem"><button class="menuButton" routerLink="">Home</button></li>
-        <li class="sideMenuItem" *ngIf="authService.isLoggedIn()"><button class="menuButton" routerLink="private-home">Users</button></li>
-        <li class="sideMenuItem" *ngIf="!authService.isLoggedIn()"><button class="menuButton" routerLink="login">Login</button></li>
-        <li class="sideMenuItem"><button class="menuButton" (click)="authService.logout()">Logout</button></li>
+        <li class="sideMenuItem"><button class="sideMenuButton" routerLink="">Home</button></li>
+        <li class="sideMenuItem" *ngIf="authService.isLoggedIn()"><button class="sideMenuButton" routerLink="private-home">Users</button></li>
+        <li class="sideMenuItem" *ngIf="!authService.isLoggedIn()"><button class="sideMenuButton" routerLink="login">Login</button></li>
+        <li class="sideMenuItem" *ngIf="authService.isLoggedIn()"><button class="sideMenuButton" (click)="authService.logout()">Logout</button></li>
       </ul>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" [ngClass]="{handsetToolbar : (isHandset$ | async)}">
       <button
+        id="sideMenuButton"
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        Menu
       </button>
       <ul id="menu" *ngIf="!(isHandset$ | async)">
         <li class="menuItem"><button class="menuButton" routerLink="">Home</button></li>
