@@ -1,3 +1,9 @@
+$errorText: red;
+
 .loginInput{
-    width: 300px;
+    width: 80%;
+}
+
+.errorMessage{
+    color: $errorText;
 }

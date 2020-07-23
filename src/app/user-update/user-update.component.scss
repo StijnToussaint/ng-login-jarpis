@@ -1,4 +1,6 @@
+$errorText: red;
+
 .validationError{
     margin-bottom: 20px;
-    color: red;
+    color: $errorText;
 }

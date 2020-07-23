@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { UsersService } from './../services/users.service';
 import { AuthService } from '../services/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
 @Component({
   selector: 'private-home',
@@ -14,15 +14,34 @@ export class PrivateHomeComponent implements OnInit {
   users$;
   usersLength;
   startIndex = 0;
-  endIndex = 10;
+  endIndex = 9;
   currentPage = 0;
   totalPages;
+  breakpoint;
+
   constructor(private _authService: AuthService, private usersService: UsersService, private router: Router) { 
     this.authService = _authService;
   }
 
   ngOnInit(): void {
     this.users$ = this.usersService.getUsers(0,200);
+    if(window.innerWidth <= 610){
+      this.breakpoint = 1;
+    }else if(window.innerWidth <= 900){
+      this.breakpoint = 2;
+    }else{
+      this.breakpoint = 3;
+    };
+  }
+
+  onResize(){
+    if(window.innerWidth <= 610){
+      this.breakpoint = 1;
+    }else if(window.innerWidth <= 900){
+      this.breakpoint = 2;
+    }else{
+      this.breakpoint = 3;
+    };
   }
 
   newUser(){
@@ -30,14 +49,14 @@ export class PrivateHomeComponent implements OnInit {
   }
 
   getArrayFromNumber(length){
-    this.totalPages = Math.ceil(length/10);
+    this.totalPages = Math.ceil(length/9);
     return new Array(this.totalPages);
   }
 
   updateIndex(pageIndex){
-    this.startIndex = pageIndex * 10;
-    this.endIndex = this.startIndex + 10;
-    this.currentPage = this.startIndex / 10;
+    this.startIndex = pageIndex * 9;
+    this.endIndex = this.startIndex + 9;
+    this.currentPage = this.startIndex / 9;
     window.scrollTo(0, 0);
   }
 

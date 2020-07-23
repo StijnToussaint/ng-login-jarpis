@@ -1,85 +1,17 @@
-#menu{
-    width:100%;
-    height: 100px;
-    list-style:none;
-    margin:0;
-    background-color: lightgrey;
-}
-
-#avatar{
+.avatar{
     background-color: black;
     height: 100px;
+    width: 100px;
+    object-fit: fill;
     list-style:none;
     margin:0;
 }
 
-.menuItem{
-    float:left;
-    cursor: pointer;
-    height:100%;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-#logoutDropdown{
-    float: right;
-    position: absolute;
-    background-color: darkgrey;
-    width:295px;
-    margin-top: -4px;
-    padding: 10px;
-    list-style-type: none;
-    z-index: 10;
-    margin-right: 60px;
-}
-
-.logoutDropdownItem{
-    margin: 10px;
-    list-style-type: none;
-}
-
-.menuButton{
-    height:100%;
-    width: 175px;
-    border-radius: 0px;
-}
-
-#avatarMenu{
-    float:right;
-    margin-right: 100px;
-    margin-left: 0;
-    padding-right:20px;
-    background-color: white;
-    cursor: default;
-}
-
-#avatarButton{
-    height:100%;
-    width: 175px;
-    margin-left: 0;
-    border-radius: 0px;
-}
-
-#avatarButton:hover{
-    background-color: darkgrey;
+main-nav{
+    padding:0;
 }
 
 #content{
     margin: 60px;
-}
-
-.hoverMenu:hover #logoutDropdown{
-    visibility: visible;
-}
-
-.hoverMenu #logoutDropdown{
-    visibility: hidden;
-}
-
-.dropdownButton{
-    background-color: lightgrey;
-}
-
-.dropdownButton:hover{
-    background-color: grey;
+    margin-top: 40px;
 }

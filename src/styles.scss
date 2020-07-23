@@ -1,3 +1,22 @@
+$inactiveButton: darkgrey;
+$activeButton: grey;
+$errorText: red;
+$itemBackground: lightgrey;
+$bodyText: black;
+$avatarBackground: black;
+$inputBorder: #ccc;
+$buttonText: white;
+$currentPage: black;
+$logoutDropdownBackground: darkgrey;
+$avatarButtonActive: darkgrey;
+$inactiveDropdownButton: lightgrey;
+$activeDropdownButton: grey;
+
+html,
+body{
+    height:100%;
+}
+
 body{
     padding: 0;
     margin: 0;
@@ -19,7 +38,7 @@ input[type=text], select {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid $inputBorder;
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -29,7 +48,7 @@ input[type=email], select {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid $inputBorder;
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -39,39 +58,20 @@ input[type=password], select {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid $inputBorder;
     border-radius: 4px;
     box-sizing: border-box;
-}
-  
-input[type=submit] {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-input[type=submit]:hover {
-    background-color: #45a049;  
 }
 
 .form {
     border-radius: 5px;
-    background-color: #f2f2f2;
     padding: 20px;
 }
 
 button {
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-    background-color: darkgrey; /* Green */
+    background-color: $inactiveButton; /* Green */
     border: none;
-    color: white;
+    color: $buttonText;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -82,7 +82,7 @@ button {
 
 button:hover {
     cursor:pointer;
-    background-color: grey;
+    background-color: $activeButton;
 }
 
 *:focus {
@@ -90,12 +90,7 @@ button:hover {
 }
 
 .avatar{
-    max-width: 100%;
-    height: auto;
-}
-
-.avatarContainer{
-    width:100px;
-    height:100px;
-    background-color: black;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
 }

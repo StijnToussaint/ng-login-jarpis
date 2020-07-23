@@ -1,15 +1,17 @@
 <h2>Welcome {{ authService.currentUser.firstName }}</h2>
 <button (click)="newUser()">New user</button>
-<ul id="userList">
-    <li class="userListItem" *ngFor="let user of (users$ | async)?.data | slice:startIndex:endIndex">
-        <a [routerLink]="user.id">
-            {{ ((user.firstName + " " + user.lastName).length>14)? ((user.firstName + " " + user.lastName) | slice:0:14)+'..':((user.firstName + " " + user.lastName)) }}
-            <div class="avatarContainer avatarUserList">
-                <img class="avatar" [src]="user.avatar">
-            </div>
-        </a>
-    </li>
-</ul>
+<div id="userListContainer" (window:resize)="onResize()">
+    <mat-grid-list id="userList" [cols]="breakpoint" rowHeight="400px">
+        <mat-grid-tile *ngFor="let user of (users$ | async)?.data | slice:startIndex:endIndex">
+            <a class="userListItem" [routerLink]="user.id">
+                {{ ((user.firstName + " " + user.lastName).length>30)? ((user.firstName + " " + user.lastName) | slice:0:30)+'..':((user.firstName + " " + user.lastName)) }}
+                <div class="avatarContainer avatarUserList">
+                    <img class="avatar" [src]="user.avatar">
+                </div>
+            </a>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
 <nav>
     <ul id="pagination">
         <li class="paginationItem" (click)="previousPage()">

@@ -17,5 +17,5 @@
     <label for="inputAvatar">Link to avatar:</label>
     <input type="text" id="inputAvatar" name="avatar" formControlName="avatar" required>
     <div *ngIf = "avatar.touched && avatar.invalid" class="validationError">Not a valid link to avatar image</div>
-    <button type="submit">Update</button>
+    <button type="submit" [disabled]="updateUserForm.invalid">Update</button>
 </form>

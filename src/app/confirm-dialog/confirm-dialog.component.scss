@@ -1,10 +1,12 @@
+$itemBackground: lightgrey;
+
 .dialogButton{
     margin: 10px;
 }
 
 #dialogBox{
     position:absolute;
-    background-color:lightgrey;
+    background-color: $itemBackground;
     padding: 20px;
     width: 300px;
     margin-left:35px;
